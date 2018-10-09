@@ -82,7 +82,7 @@ class IouObjectTracker(object):
             if ret:
                 object_info = ObjectInfo(bounding_box=position,
                                          confidence=tracked_object.confidence(),
-                                         class_id=tracked_object.class_id(),
+                                         class_name=tracked_object.class_name(),
                                          track_id=tracked_object.track_id())
                 actives.append(object_info)
             else:
@@ -146,7 +146,7 @@ class IouObjectTracker(object):
 
                 self._tracks[track_id].update_from_detection(frame_id,
                                                              object_info.bounding_box,
-                                                             class_id=object_info.class_id,
+                                                             class_name=object_info.class_name,
                                                              confidence=object_info.confidence)
                 used.add(best_index)  # prevent from duplicating same object
                 actives.append(object_info)
@@ -164,7 +164,7 @@ class IouObjectTracker(object):
             self._tracks[new_id] = self._create_tracked_object(track_id=new_id)
             self._tracks[new_id].update_from_detection(frame_id,
                                                        bounding_box=object_info.bounding_box,
-                                                       class_id=object_info.class_id,
+                                                       class_name=object_info.class_name,
                                                        confidence=object_info.confidence)
             actives.append(object_info)
         return actives
