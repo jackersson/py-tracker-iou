@@ -2,7 +2,7 @@
 
 Installation:
 
-    pip3 install git+https://github.com/dataiCV/pytracker_iou.git
+    pip3 install git+https://github.com/jackersson/py-tracker-iou.git
 
 Simple usage
 
