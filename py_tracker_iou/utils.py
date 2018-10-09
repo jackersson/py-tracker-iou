@@ -1,4 +1,14 @@
-def intersection_over_union(boxA, boxB):
+def intersection_over_union(boxA, boxB, ltrb=False):
+    if ltrb:
+        return _intersection_over_union(boxA, boxB)
+    else:
+        xA, yA, wA, hA = boxA
+        xB, yB, wB, hB = boxB
+        return _intersection_over_union([xA, yA, xA + wA, yA + hA],
+                                        [xB, yB, xB + wB, yB + hB])
+
+
+def _intersection_over_union(boxA, boxB):
     """
         Calculates intersection over union for two bounding boxes:
         Args:
@@ -9,6 +19,8 @@ def intersection_over_union(boxA, boxB):
             IOU : float [0..1]
 
     """
+
+
     # determine the (x, y)-coordinates of the intersection rectangle
     xA = max(boxA[0], boxB[0])
     yA = max(boxA[1], boxB[1])
