@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    setup for pytracker_iou package
+    setup for py_tracker_iou package
 """
 
 from setuptools import setup
@@ -12,26 +12,25 @@ with open('README.md') as readme_file:
 
 requirements = [
     'numpy',
-    'pytest'
 ]
 
 setup(
-    name='pytracker_iou',
+    name='py_tracker_iou',
     use_scm_version=True,
     setup_requires=['setuptools_scm'],
     description="PyTrackerIou package",
     long_description=readme,
-    author="Dat-ai",
-    author_email='taras.lishchenko@dat-ai.com',
-    url='https://github.com/dataiCV/pytracker_iou',
+    author="Taras Lishchenko",
+    author_email='taras.lishchenko@gmail.com',
+    url='https://github.com/jackersson/py-tracker-iou.git',
     packages=[
-        'tracker_iou',
+        'py_tracker_iou',
     ],
     include_package_data=True,
     install_requires=requirements,
     license="Apache Software License 2.0",
     zip_safe=True,
-    keywords='tracker_iou',
+    keywords='py_tracker_iou',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
